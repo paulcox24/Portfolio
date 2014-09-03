@@ -14,10 +14,32 @@
  *= require_self
  */
 
+a {
+ text-decoration: none; 
+}
+
+#title{
+  float: left;
+  margin: 0 0 30px 0;
+  padding: 5px 0 0 0;
+  width: 100%;  
+  background: #71A6CD;
+  border-color: #5C87A6;
+
+}
+
+#logo{
+  text-align: center;
+  margin: 0;
+  color: #fff;
+}
+
+
+
 nav {
   text-align: center;
   padding: 10px 0;
-  margin: 20px 0 20px;
+  margin: 20px 0 0;
 }
 
 nav ul {
@@ -27,7 +49,12 @@ nav ul {
 }
 
 nav li {
-  display: inline-block; 
+  display: inline-block;
+}
+
+nav a{
+  font-weight: 800;
+  padding: 15px 7px  
 }
 
 nav{
@@ -39,3 +66,29 @@ body{
   background-color: white;
   color: #666;
 }
+
+a {
+  color: #45769A;
+}
+
+#title h1 a{
+  color: #fff;
+  padding: 15px 7px
+  
+}
+
+a:hover {
+  color: #2989CD;  
+}
+
+
+/* nav link */
+nav a, nav a:visited{
+ color: #fff; 
+}
+
+/* selected nav link */
+nav a.selected, nav a:hover{
+  color: #2F485A;
+}
+
