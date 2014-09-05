@@ -1,7 +1,7 @@
 
-<h1>Blog posts</h1>
+<h1>Blog</h1>
 
-<p><%= link_to 'New Post', new_post_path %></p>
+<div id="new"><%= link_to 'New Post', new_post_path %></div>
 
   <% @posts.reverse.each do |post| %>
 
@@ -9,8 +9,13 @@
       <h2><%= post.title %></h2>
       <h3><%= post.author %></h3>
       <p><%= post.body %></p>
-      <%= link_to 'Comment', post_path(post.id) %>
-      <%= link_to 'Edit', edit_post_path(post.id) %>
+      <ul>
+        <% post.comments.each do |comment| %>
+          <li><%= comment.body %></li>
+        <% end %>
+      </ul>
+      <%= link_to 'Comment', post_path(post.id) %> |
+      <%= link_to 'Edit', edit_post_path(post.id) %> |
       <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
     
   <% end %>

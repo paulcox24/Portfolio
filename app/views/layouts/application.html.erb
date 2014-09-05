@@ -7,15 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="title"> 
-  <div id="logo">
-    <h1><%= link_to 'Paul Cox', root_path %></h1>
-    <h2>Developer</h2>
-    <%= render 'layouts/navbar' %>
+
+  <div id="title"> 
+    <div id="logo">
+      <h1><%= link_to 'Paul Cox', root_path %></h1>
+      <h2>Developer</h2>
+      <%= render 'layouts/navbar' %>
+    </div>
   </div>
-</div>
-<%= yield %>
-<p>&copy; 2014 Paul Cox</p> 
+
+  <div class="<%= controller.controller_name %>">
+    <%= yield %>
+  </div>
+
+  <p>&copy; 2014 Paul Cox</p> 
+
 </body>
 
 </html>

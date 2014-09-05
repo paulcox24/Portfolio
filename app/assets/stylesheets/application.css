@@ -14,8 +14,13 @@
  *= require_self
  */
 
-a {
+* {
  text-decoration: none; 
+}
+
+a {
+  color: #45769A;
+  padding: 10px;
 }
 
 #title{
@@ -67,9 +72,6 @@ body{
   color: #666;
 }
 
-a {
-  color: #45769A;
-}
 
 #title h1 a{
   color: #fff;
