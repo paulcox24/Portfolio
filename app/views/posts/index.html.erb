@@ -1,5 +1,10 @@
 
 <h1>Blog</h1>
+<% if notice %>
+  <p id="notice">
+    <%= notice %>
+  </p>
+<% end %>
 
 <div id="new"><%= link_to 'New Post', new_post_path %></div>
 
