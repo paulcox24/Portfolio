@@ -9,7 +9,6 @@
 <div id="new"><%= link_to 'New Post', new_post_path %></div>
 
   <% @posts.reverse.each do |post| %>
-
       <hr />  
       <h2><%= link_to post.title, post_path(post.id) %></h2>
       <h3><%= post.author %></h3>
@@ -20,11 +19,8 @@
         <% end %>
       </ul>
       <%= link_to 'Comment', post_path(post.id) %> |
-      <%= link_to 'Edit', edit_post_path(post.id) %> |
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-    
+      <%= link_to 'Edit', edit_post_path(post.id) %>
   <% end %>
 
-<br>
 
 

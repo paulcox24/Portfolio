@@ -20,15 +20,16 @@
 <h2><%= @post.title  %></h2>
 <h3><%= @post.author %></h3>
 <p><%= @post.body %></p>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %> | 
+<%= link_to 'Comment', new_post_comment_path(@post) %>
+
+<h3>Comments</h3>
 
 <ul>
   <% @post.comments.each do |comment| %>
     <li><%= comment.body %></li>
-    <%= link_to "Edit", edit_post_comment_path(:post_id => @post.id, :id => comment.id) %> |
-    <%= link_to "Delete", post_comment_path(:post_id => @post.id, :id => comment.id), method: :delete %>
+    <%= link_to "Edit", edit_post_comment_path(comment.post, comment) %>
   <% end %>
 </ul>
 
-<%= render 'comments/form' %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

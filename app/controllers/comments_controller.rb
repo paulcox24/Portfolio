@@ -1,41 +1,48 @@
 class CommentsController < ApplicationController
+  before_action :find_post
+  before_action :set_comment, only: [:edit, :update, :destroy]
+
+  def new
+    @comment = @post.comments.new
+  end
 
   def create
-    @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     if @comment.save
-    redirect_to @post
+      redirect_to post_path(@post)
     else
-    redirect_to @post
+      render :new
     end 
   end
 
   def edit
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
   end 
 
   def update
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id]) 
-    if @comment.update_attributes(comment_params)
+    if @comment.update(comment_params)
       redirect_to post_path(@post)
     else
-      render action: :edit
+      render :edit
     end   
   end 
 
   def destroy
-    @post = Post.find(params[:post_id])
-    @comment  = @post.comments.find(params[:id])
     @comment.destroy
-    redirect_to post_path(id: @post.id)
+    redirect_to post_path(@post)
   end
 
   private
   
   def comment_params
-      params.require(:comment).permit(:post_id, :body)
+    params.require(:comment).permit(:post_id, :body)
+  end
+
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+
+  def find_post
+    @post = Post.find(params[:post_id])
   end
 
 end
