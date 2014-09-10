@@ -13,8 +13,7 @@
  *= require_tree .
  *= require_self
  */
-$navbar-default-bg: #fafafa;
-$navbar-default-link-active-bg: darken($navbar-default-bg, 5%);
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
