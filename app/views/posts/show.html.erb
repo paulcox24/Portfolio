@@ -2,12 +2,13 @@
 
 <h1> Post </h1>
 <div class="page-header">
-<h2><%= @post.title  %> <small><%= @post.author %></small></h2>
+  <h2><%= @post.title  %> <small><%= @post.author %></small><br>
+  <small><%= @post.created_at %></small></h2>
 </div>
 <p><%= @post.body %></p>
-<%= link_to 'New comment', new_post_comment_path(@post), class: "btn btn-success" %>
-<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-info" %>
-<%= link_to 'Back', posts_path, class: "btn btn-default" %>
+  <%= link_to 'New comment', new_post_comment_path(@post), class: "btn btn-success" %>
+  <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-info" %>
+  <%= link_to 'Back', posts_path, class: "btn btn-default" %>
 
 <h3>Comments</h3>
 
