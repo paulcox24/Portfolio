@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Portfolio</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= render 'layouts/navbar' %>
-
-  <div class="<%= controller.controller_name %>">
-    <%= yield %>
-  </div>
-
-  <p>&copy; 2014 Paul Cox</p> 
-
-</body>
-
+  <head>
+    <title>Portfolio</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+<%= render 'layouts/navbar' %>
+  <body>
+    <div class="<%= controller.controller_name %>">
+      <%= yield %>
+    </div>
+    <br>
+    <div class="copyright" >&copy; 2014 Paul Cox</div>
+  </body>
 </html>

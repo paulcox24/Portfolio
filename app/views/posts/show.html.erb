@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <h1> Post </h1>
-
-<h2><%= @post.title  %></h2>
-<h3><%= @post.author %></h3>
+<div class="page-header">
+<h2><%= @post.title  %> <small><%= @post.author %></small></h2>
+</div>
 <p><%= @post.body %></p>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %> | 
-<%= link_to 'Comment', new_post_comment_path(@post) %>
+<%= link_to 'New comment', new_post_comment_path(@post), class: "btn btn-success" %>
+<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-info" %>
+<%= link_to 'Back', posts_path, class: "btn btn-default" %>
 
 <h3>Comments</h3>
 
 <ul>
   <% @post.comments.each do |comment| %>
-    <li><%= comment.body %></li>
-    <%= link_to "Edit", edit_post_comment_path(comment.post, comment) %>
+    <li><%= comment.body %> &nbsp; <%= link_to 'Edit', edit_post_comment_path(comment.post, comment), class: "btn btn-info btn-xs" %></li>
+    
   <% end %>
 </ul>
 
