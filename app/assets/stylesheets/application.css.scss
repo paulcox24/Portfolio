@@ -17,7 +17,7 @@
 
 // $navbar-default-link-color: #428bca;
 // $navbar-height: 50px;
-
+$jumbotron-bg: #fff;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -44,8 +44,11 @@ body {
   margin-top: -48px;
 }
 
-.jumbotron h1 {
-  color: $brand-primary;
+.jumbotron {
+  h1 {
+    color: $brand-primary;
+    text-align: center;
+  }
 }
 
 .page-header h2 a {

@@ -13,7 +13,8 @@
     <h2><%= link_to post.title, post_path(post.id) %> <small><%= post.author %></small></h2>
     </div>
     <p><%= post.body %></p>
-    <ul>
+    <h4>Comments</h4>
+    <ul class="list-unstyled">
       <% post.comments.each do |comment| %>
         <li><%= comment.body %></li>
       <% end %>
