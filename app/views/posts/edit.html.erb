@@ -1,7 +1,7 @@
 <h1>Edit Post</h1>
 <br>
-<div class="form">
-<%= form_for(@post) do |f| %>
+
+<%= form_for @post, html: { role: 'form' }  do |f| %>
   <% if @post.errors.any? %>
     <div class="alert alert-danger" role="alert">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -14,23 +14,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
   </div>
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
+  <div class="form-group">
+    <%= f.text_field :author, class: "form-control", placeholder: "Author" %>
   </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
+  <div class="form-group">
+    <%= f.text_area :body, class: "form-control", placeholder: "Body" %>
   </div>
-
 
   <%= f.submit 'Update', class: "btn btn-success" %>
   <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger" %>
   <%= link_to 'Back', post_path(@post) , class: "btn btn-default" %>
 <% end %>
-</div>
+
 
