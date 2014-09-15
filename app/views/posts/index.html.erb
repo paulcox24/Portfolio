@@ -17,9 +17,9 @@
     </div>
     <p><%= post.body %></p>
     <h4>Comments</h4>
-    <ul class="list-unstyled">
+    <ul class="list-group">
       <% post.comments.each do |comment| %>
-        <li><%= comment.body %></li>
+        <li class="list-group-item comment_size"><%= comment.body %></li>
       <% end %>
     </ul>
     <%= link_to 'View/Comment', post_path(post.id) , class: "btn btn-default"%>
