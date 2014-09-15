@@ -2,31 +2,20 @@
 <br>
 <div class="row">
   <div class="col-md-6">
-  <%= form_for @post, html: { role: 'form' }  do |f| %>
-    <% if @post.errors.any? %>
-      <div class="alert alert-danger" role="alert">
-        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-        <ul>
-        <% @post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <%= simple_form_for @post, input_html: { role: 'form'} do |f| %>
+    
 
     <div class="form-group">
-      <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+      <%= f.input :title, label: false, class: "form-control", placeholder: "Title" %>
     </div>
     <div class="form-group">
-      <%= f.text_field :author, class: "form-control", placeholder: "Author" %>
+      <%= f.input :author, label: false, class: "form-control", placeholder: "Author" %>
     </div>
     <div class="form-group">
-      <%= f.text_area :body, class: "form-control", placeholder: "Body" %>
+      <%= f.input :body, label: false, class: "form-control", placeholder: "Body" %>
     </div>
 
-    <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe + ' Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger" %>
-    <%= link_to 'Back', post_path(@post) , class: "btn btn-default" %>
+    <%= link_to 'Back', posts_path , class: "btn btn-default" %>
     <%= f.submit 'Update', class: "btn btn-success" %>
   <% end %>
   </div>

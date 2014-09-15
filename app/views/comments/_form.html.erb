@@ -1,18 +1,8 @@
-<%= form_for [@post, @comment], html: { role: 'form' } do |f| %>
-  <% if @comment.errors.any? %>
-    <div class="alert alert-danger" role="alert">
-      <h3><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h3>
-
-      <ul>
-      <% @comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for [@post, @comment], input_html: { role: 'form' } do |f| %>
+  
 
   <div class = "form-group">
-    <%= f.text_area :body, class: "form-control", placeholder: "Comment" %><br>
+    <%= f.input :body, label: false, class: "form-control", placeholder: "Comment" %><br>
   </div>
 
   <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe + ' Delete', [@post, @comment], method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger" %>

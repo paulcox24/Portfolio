@@ -1,6 +1,6 @@
 
 
-<%= form_for @post, html: { role: 'form'} do |f| %>
+<%= simple_form_for @post, html: { role: 'form'} do |f| %>
   <% if @post.errors.any? %>
     <div class="alert alert-danger" role="alert">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
