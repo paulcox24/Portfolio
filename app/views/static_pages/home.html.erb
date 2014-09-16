@@ -9,6 +9,7 @@
     <h2><%= link_to post.title, post_path(post.id) %> <small><%= post.author %></small><br>
       <small><%= post.created_at.localtime.strftime("%A, %b %-d, %Y  %l:%M%p") %></small></h2>
     </div>
+    <%= image_tag post.image.url(:thumb) if post.image?%>
     <p><%= post.body %></p>
    
 <% end %>
