@@ -3,12 +3,11 @@
 <h1> Post </h1>
 <div class="page-header">
   <h2><%= @post.title  %> <small><%= @post.author %></small><br>
-  <small><%= @post.created_at.strftime("%A, %b %-d, %Y  %l:%M%p") %></small></h2>
+  <small><%= @post.created_at.localtime.strftime("%A, %b %-d, %Y  %l:%M%p") %></small></h2>
 </div>
 <p><%= @post.body %></p>
   <%= link_to 'Back', posts_path, class: "btn btn-default" %>
   <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-info" %>
-  <%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe + ' New comment', new_post_comment_path(@post), class: "btn btn-primary" %>
 
 <h3>Comments</h3>
 
@@ -17,4 +16,12 @@
     <%= link_to comment.body, edit_post_comment_path(comment.post, comment), class: "list-group-item comment_size" %>
   <% end %>
 </ul>
+<%= simple_form_for @post do |f| %>
 
+  <%= f.simple_fields_for :comments do |comment| %>
+  <%end %>
+
+  <div class="links">
+    <%= link_to_add_association "<span class='glyphicon glyphicon-pencil'></span>".html_safe + ' New comment', f, :comments, class: "btn btn-primary"  %>
+  </div>  
+<% end %>
