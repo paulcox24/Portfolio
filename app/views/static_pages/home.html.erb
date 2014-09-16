@@ -4,3 +4,11 @@
     <p>Lorem ipsum dolor sit amet, mea meis quaestio te, in sonet partem aperiam his. Pro vidit alterum definitiones ut, et mea ignota accusam.</p>
   </div>  
 </div> 
+<% @posts.last(2).reverse.each do |post| %>
+    <div class="page-header" > 
+    <h2><%= link_to post.title, post_path(post.id) %> <small><%= post.author %></small><br>
+      <small><%= post.created_at.localtime.strftime("%A, %b %-d, %Y  %l:%M%p") %></small></h2>
+    </div>
+    <p><%= post.body %></p>
+   
+<% end %>
