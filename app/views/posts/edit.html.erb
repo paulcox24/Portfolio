@@ -2,7 +2,7 @@
 <br>
 <div class="row">
   <div class="col-md-6">
-    <%= simple_form_for @post, input_html: { role: 'form'} do |f| %>
+    <%= simple_form_for @post, input_html: { :multipart => true, role: 'form'} do |f| %>
     
 
     <div class="form-group">
@@ -13,6 +13,9 @@
     </div>
     <div class="form-group">
       <%= f.input :body, label: false, class: "form-control", placeholder: "Body" %>
+    </div>
+    <div class="form-group">
+      <%= f.input :image %>
     </div>
 
     
