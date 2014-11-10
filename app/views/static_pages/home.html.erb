@@ -1,15 +1,39 @@
-<div class="jumbotron">
-  <div class="container-fluid">
-    <h1>Portfolio</h1>
-    <p>Lorem ipsum dolor sit amet, mea meis quaestio te, in sonet partem aperiam his. Pro vidit alterum definitiones ut, et mea ignota accusam.</p>
-  </div>  
-</div> 
-<% @posts.last(2).reverse.each do |post| %>
-    <div class="page-header" > 
-    <h2><%= link_to post.title, post_path(post.id) %> <small><%= post.author %></small><br>
-      <small><%= post.created_at.localtime.strftime("%A, %b %-d, %Y  %l:%M%p") %></small></h2>
+<div id="home">
+  <div class="title">This is the home page</div>
+</div>
+
+
+
+<!-- <div class="parallax centered">
+  <div class="parallax__group">
+    <div class="parallax__layer parallax__layer--back home">
+      <h3>This is the back of home</h3>
     </div>
-    <%= image_tag post.image.url(:thumb) if post.image?%>
-    <p><%= post.body %></p>
-   
-<% end %>
+    <div class="parallax__layer parallax__layer--base">
+      <h2>This is the base of home</h2>
+    </div>
+  </div>  
+  <div class="parallax__group">
+    <div class="parallax__layer parallax__layer--deep">
+      <h3>This is the deep of projects</h3>
+    </div>
+    <div class="parallax__layer parallax__layer--back projects">
+      <h3>This is the back of projects</h3>
+    </div>
+    <div class="parallax__layer parallax__layer--base">
+      <h2>This is the base of projects</h2>
+    </div>
+    <div class="parallax__layer parallax__layer--fore">
+      <h2>This is the fore of projects</h2>
+    </div>
+  </div>  
+  <div class="parallax__group">
+    <div class="parallax__layer parallax__layer--back about">
+      <h3>This is the back of about</h3>
+    </div>
+    <div class="parallax__layer parallax__layer--base">
+      <h2>This is the base of about</h2>
+    </div>
+  </div>  
+
+</div> -->
