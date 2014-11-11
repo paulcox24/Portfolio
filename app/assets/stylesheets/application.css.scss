@@ -67,7 +67,7 @@ $jumbotron-bg: #fff;
 
 .name {
   font-size: 6em;
-  margin-bottom: -1vw;
+  margin-bottom: -.1em;
 }
 
 #home {
@@ -81,6 +81,11 @@ $jumbotron-bg: #fff;
   position: relative
 }
 
-.dev {
-  font-size: 2em;
+.links {
+  margin-top: 20px;
+  font-size: 1.5em; 
+  font-family: 'Josefin Sans', sans-serif;
+  li{
+    padding: 0 1em 0 1em;
+  }
 }
